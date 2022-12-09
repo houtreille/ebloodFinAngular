@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #interestRateform="ngForm">
+
+      <div class="form-group">
+        <label for="ticker">Ticker</label>
+        <input type="text" [(ngModel)]="interestRate.ticker"
+               class="form-control"
+               id="ticker"
+               name="ticker"
+               placeholder="Enter the ticker"
+               required #ticker="ngModel">
+      </div>
+      <div [hidden]="!ticker.pristine" class="alert alert-danger">Ticker is required</div>
+
+      <div class="form-group">
+        <label for="ticker">Descritption</label>
+        <input type="text" [(ngModel)]="interestRate.description"
+               class="form-control"
+               id="descriptiom"
+               name="descriptiom"
+               placeholder="Enter the description"
+               required #descriptiom="ngModel">
+        <div [hidden]="!descriptiom.pristine" class="alert alert-danger">Descriptiom is required</div>
+      </div>
+      <button type="submit" [disabled]="!interestRateform.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

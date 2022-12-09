@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string;
+  entity : string;
+  endpointPrefix : string;
 
   constructor() {
-    this.title = 'Spring Boot - Angular Application XXX';
+    this.title = 'Interest rate module';
+    this.entity = 'Interest rate';
+    this.endpointPrefix = '/interestRate';
   }
 }
